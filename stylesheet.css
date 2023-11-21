@@ -101,19 +101,24 @@ li {
     background-color: var(--blue);
     color: white;
     font-weight: bold;
-    text-align: end;
-    padding: 1rem;
+    text-align: center;
+    padding: 16px;
+    font-size: large;
 }
 
 .video {
-    border: 1px solid #AAA;
-    box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.4);
     border-radius: 4px;
 }
 
 .colored-underline-yellow {
     text-decoration: none;
     border-bottom: 10px solid var(--yellow);
+}
+
+.colored-underline-blue {
+    text-decoration: none;
+    border-bottom: 10px solid var(--blue);
 }
 
 .form-style {
@@ -134,18 +139,26 @@ li {
     padding: 0;
 }
 
-.jetzt {
-    background-color: var(--yellow);
+button {
     font-weight: bold;
     font-size: large;
     border-style: unset;
     padding: 10px 20px;
 }
 
-/* Dialog-Box */
+.jetzt, .l-button, .r-button {
+    background-color: var(--yellow);
+}
 
+.l-button {
+    background-color: var(--salmon);
+    color: white;
+}
 
-/* DEBUG */
+.r-button {
+    background-color: var(--graygreen);
+    color: white;
+}
 
 .debug {
     border: dashed fuchsia;
