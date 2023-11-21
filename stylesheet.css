@@ -124,6 +124,7 @@ li {
 .form-style {
     font-size: large;
     font-weight: bold;
+    color: black;
     margin: 12px 0 ;
     width: 540px;
     line-height: 30px;
@@ -148,6 +149,7 @@ button {
 
 .jetzt, .l-button, .r-button {
     background-color: var(--yellow);
+    color: black;
 }
 
 .l-button {
