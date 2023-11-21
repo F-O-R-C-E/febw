@@ -119,12 +119,33 @@ li {
 .form-style {
     font-size: large;
     font-weight: bold;
-    margin: 12px;
-    width: 550px;
+    margin: 12px 0 ;
+    width: 540px;
     line-height: 30px;
     height: 40px;
     padding: 0 20px;
 }
+
+.form-cb {
+    vertical-align: bottom;
+    width: 30px;
+    height: 30px;
+    margin: 0 10px 0 0;
+    padding: 0;
+}
+
+.jetzt {
+    background-color: var(--yellow);
+    font-weight: bold;
+    font-size: large;
+    border-style: unset;
+    padding: 10px 20px;
+}
+
+/* Dialog-Box */
+
+
+/* DEBUG */
 
 .debug {
     border: dashed fuchsia;
