@@ -25,7 +25,7 @@ body {
     min-height: 100vh;
 }
 
-p, img, b, h1, h2 ,h3 ,h4 {
+p, img, b, h1, h2, h3, h4 {
     padding: 0;
     margin: 0;
 }
@@ -111,3 +111,21 @@ li {
     border-radius: 4px;
 }
 
+.colored-underline-yellow {
+    text-decoration: none;
+    border-bottom: 10px solid var(--yellow);
+}
+
+.form-style {
+    font-size: large;
+    font-weight: bold;
+    margin: 12px;
+    width: 550px;
+    line-height: 30px;
+    height: 40px;
+    padding: 0 20px;
+}
+
+.debug {
+    border: dashed fuchsia;
+}
