@@ -129,6 +129,11 @@ li {
     display: none;
 }
 
+.fade {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
 .colored-underline-yellow {
     text-decoration: none;
     border-bottom: 10px solid var(--yellow);

@@ -9,12 +9,31 @@
     <script src="script.js"></script>
     <script src="https://www.youtube.com/iframe_api"></script>
     <script>
+        // This function creates an <iframe> (and YouTube player) after the API code downloads.
+        var player;
+
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('videoFrame', {
+                events: {
+                    'onStateChange': onPlayerStateChange
+                }
+            });
+        }
+
+        // When the player state changes, check if the video has ended.
+        function onPlayerStateChange(event) {
+            if (event.data == YT.PlayerState.ENDED) {
+                document.getElementById('videoFrame').style.display = 'none';
+                document.getElementById('startImage').style.display = 'block';
+            }
+        }
+
         document.addEventListener('DOMContentLoaded', (event) => {
             document.getElementById('startImage').addEventListener('click', function () {
                 this.style.display = 'none';
                 var iframe = document.getElementById('videoFrame');
                 iframe.style.display = 'block';
-                iframe.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+                player.playVideo(); // Use the API to play the video
             });
         });
     </script>
@@ -23,7 +42,7 @@
 <div class="container">
     <div class="block">
         <div class="content">
-            <div class="content video"  id="videoContainer">
+            <div class="content video" id="videoContainer">
                 <img id="startImage" src="images/febwlogo.png" alt="Video-Platzhalter">
                 <iframe id="videoFrame"
                         width="1140"
