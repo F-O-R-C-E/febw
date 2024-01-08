@@ -7,14 +7,33 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet">
     <title>Title</title>
     <script src="script.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.getElementById('startImage').addEventListener('click', function () {
+                this.style.display = 'none';
+                var iframe = document.getElementById('videoFrame');
+                iframe.style.display = 'block';
+                iframe.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+            });
+        });
+    </script>
 </head>
 <body>
-
 <div class="container">
     <div class="block">
         <div class="content">
-            <div class="content video">
-                <img src="images/video.png" alt="Video-Platzhalter">
+            <div class="content video"  id="videoContainer">
+                <img id="startImage" src="images/febwlogo.png" alt="Video-Platzhalter">
+                <iframe id="videoFrame"
+                        width="1140"
+                        height="642"
+                        src="https://www.youtube.com/embed/FcO88t7dSDM?enablejsapi=1"
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                </iframe>
             </div>
             <br>
             <br>
@@ -53,137 +72,138 @@
         </div>
     </div>
 
-    <div class="block">
-        <div class="content">
-            <div class="side-by-side">
-                <div class="left">
-                    <div class="side-by-side">
-                        <div class="left">
-                            <i class="fa-regular fa-circle fa-2xl" style="font-size: xx-large;"></i>
-                            <i class="fa-solid fa-x fa-bounce fa-2xl" style="margin-left: -40px"></i>
-                            <text style="padding-left: 30px; font-size: xxx-large;">
-                                <b>JA</b>, ich bin <br><u class="colored-underline-yellow">für ein ur leiwandes Wien!</u>
-                            </text>
-                        </div>
-                        <div class="right">
-                        </div>
+<div class="block">
+    <div class="content">
+        <div class="side-by-side">
+            <div class="left">
+                <div class="side-by-side">
+                    <div class="left">
+                        <i class="fa-regular fa-circle fa-2xl" style="font-size: xx-large;"></i>
+                        <i class="fa-solid fa-x fa-bounce fa-2xl" style="margin-left: -40px"></i>
+                        <text style="padding-left: 30px; font-size: xxx-large;">
+                            <b>JA</b>, ich bin <br><u class="colored-underline-yellow">für ein ur leiwandes Wien!</u>
+                        </text>
                     </div>
-                    <br>
-                    <div class="both">
-                        <form>
-                            <label>
-                                <input class="form-style" name="Vorname" type="text" placeholder="Vorname*">
-                            </label>
-                            <label>
-                                <input class="form-style" name="Nachname" type="text" placeholder="Nachname*">
-                            </label>
-                            <label>
-                                <input class="form-style" name="E-Mail" type="email" placeholder="E-Mail*">
-                            </label>
-
-                            <label>
-                                <select class="form-style" name="Bezirk" style="box-sizing: content-box;">
-                                    <option>1. Bezirk (Innere Stadt)</option>
-                                    <option>2. Bezirk (Leopoldstadt)</option>
-                                    <option>3. Bezirk (Landstraße)</option>
-                                    <option>4. Bezirk (Wieden)</option>
-                                    <option>5. Bezirk (Margareten)</option>
-                                    <option>6. Bezirk (Mariahilf)</option>
-                                    <option>7. Bezirk (Neubau)</option>
-                                    <option>8. Bezirk (Josefstadt)</option>
-                                    <option>9. Bezirk (Alsergrund)</option>
-                                    <option>10. Bezirk (Favoriten)</option>
-                                    <option>11. Bezirk (Simmering)</option>
-                                    <option>12. Bezirk (Meidling)</option>
-                                    <option>13. Bezirk (Hietzing)</option>
-                                    <option>14. Bezirk (Penzing)</option>
-                                    <option>15. Bezirk (Rudolfsheim-Fünfhaus)</option>
-                                    <option>16. Bezirk (Ottakring)</option>
-                                    <option>17. Bezirk (Hernals)</option>
-                                    <option>18. Bezirk (Währing)</option>
-                                    <option>19. Bezirk (Döbling)</option>
-                                    <option>20. Bezirk (Brigittenau)</option>
-                                    <option>21. Bezirk (Floridsdorf)</option>
-                                    <option>22. Bezirk (Donaustadt)</option>
-                                    <option>23. Bezirk (Liesing)</option>
-                                    <option>Ich komme nicht aus Wien.</option>
-                                </select>
-                            </label>
-                        </form>
-
-                        <div>
-                            <br>
-                            <label> <input class="form-cb" name="CB" type="checkbox"> </label>
-                            <b style="font-size: large">Ich erkläre mich damit einverstanden, dass mich das Projekt „ur leiwandes Wien“ nicht per E-Mail über aktuelle politische Themen und Ereignisse, geplante Veranstaltungen, Berichte darüber, weitere Mit-Mach-Aktionen und Nachrichten auf dem Laufenden halten.</b>
-                        </div>
-
-                        <div>
-                            <br>
-                            <button class="jetzt">Jetzt anmelden</button>
-                        </div>
+                    <div class="right">
                     </div>
                 </div>
-                <div class="right">
-                    <img src="images/jetzt-768x502.webp" width="460" alt="circle-arrows-red"></img>
+                <br>
+                <div class="both">
+                    <form>
+                        <label>
+                            <input class="form-style" name="Vorname" type="text" placeholder="Vorname*">
+                        </label>
+                        <label>
+                            <input class="form-style" name="Nachname" type="text" placeholder="Nachname*">
+                        </label>
+                        <label>
+                            <input class="form-style" name="E-Mail" type="email" placeholder="E-Mail*">
+                        </label>
+
+                        <label>
+                            <select class="form-style" name="Bezirk" style="box-sizing: content-box;">
+                                <option>1. Bezirk (Innere Stadt)</option>
+                                <option>2. Bezirk (Leopoldstadt)</option>
+                                <option>3. Bezirk (Landstraße)</option>
+                                <option>4. Bezirk (Wieden)</option>
+                                <option>5. Bezirk (Margareten)</option>
+                                <option>6. Bezirk (Mariahilf)</option>
+                                <option>7. Bezirk (Neubau)</option>
+                                <option>8. Bezirk (Josefstadt)</option>
+                                <option>9. Bezirk (Alsergrund)</option>
+                                <option>10. Bezirk (Favoriten)</option>
+                                <option>11. Bezirk (Simmering)</option>
+                                <option>12. Bezirk (Meidling)</option>
+                                <option>13. Bezirk (Hietzing)</option>
+                                <option>14. Bezirk (Penzing)</option>
+                                <option>15. Bezirk (Rudolfsheim-Fünfhaus)</option>
+                                <option>16. Bezirk (Ottakring)</option>
+                                <option>17. Bezirk (Hernals)</option>
+                                <option>18. Bezirk (Währing)</option>
+                                <option>19. Bezirk (Döbling)</option>
+                                <option>20. Bezirk (Brigittenau)</option>
+                                <option>21. Bezirk (Floridsdorf)</option>
+                                <option>22. Bezirk (Donaustadt)</option>
+                                <option>23. Bezirk (Liesing)</option>
+                                <option>Ich komme nicht aus Wien.</option>
+                            </select>
+                        </label>
+                    </form>
+
+                    <div>
+                        <br>
+                        <label> <input class="form-cb" name="CB" type="checkbox"> </label>
+                        <b style="font-size: large">Ich erkläre mich damit einverstanden, dass mich das Projekt „ur leiwandes Wien“ nicht per E-Mail über aktuelle politische Themen und Ereignisse,
+                            geplante Veranstaltungen, Berichte darüber, weitere Mit-Mach-Aktionen und Nachrichten auf dem Laufenden halten.</b>
+                    </div>
+
+                    <div>
+                        <br>
+                        <button class="jetzt">Jetzt anmelden</button>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <img src="images/jetzt-768x502.webp" width="460" alt="circle-arrows-red"></img>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="block">
+    <div class="content">
+        <div class="side-by-side">
+            <div class="left">
+                <h2>Jetzt gemeinsam:<br><u class="colored-underline-blue">Für ein ur leiwandes Wien</u></h2>
+                <br>
+                <h4>Wir laden alle Wienerinnen und Wiener herzlich ein:</h4>
+                <p>Unterstützen Sie die Initiative „Für ein ur leiwandes Wien“! Damit sich Wien entfalten kann. Damit unsere Stadt so wird, dass sich alle wohlfühlen.</p>
+            </div>
+            <div class="right">
+                <img src="images/punk-s.png" width="420px" alt="punk-s">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="block">
+    <div class="content">
+        <div class="side-by-side">
+            <div class="left">
+                <div class="side-by-side">
+                    <div class="left">
+                        <img src="images/circle-arrows-salmon.svg" width="90px" alt="circle-arrows-salmon"></img>
+                    </div>
+                    <div class="right">
+                        <h3 style="color: var(--salmon);">Für ein leistbares Wien!</h3>
+                        <b>Gegen Überteuerung.</b>
+                        <p>Wir wollen eine leistbare Innenstadt.</p>
+                        <p>Damit alle mehr davon haben.</p>
+                        <br>
+                        <button class="l-button">So ist’s ur leiwand!</button>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <div class="side-by-side">
+                    <div class="left">
+                        <img src="images/circle-arrows-graygreen.svg" width="90px" alt="circle-arrows-graygreen"></img>
+                    </div>
+                    <div class="right">
+                        <h3 style="color: var(--graygreen);">Für ein faires Wien!</h3>
+                        <b>Für eine gerechte Verteilung.</b>
+                        <p>Wir wollen ein Wien, das fair gegenüber allen ist und dem sich <b>alle</b> wohlfühlen.</p>
+                        <br>
+                        <button class="r-button">So ist’s ur leiwand!</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <div class="block">
-        <div class="content">
-            <div class="side-by-side">
-                <div class="left">
-                    <h2>Jetzt gemeinsam:<br><u class="colored-underline-blue">Für ein ur leiwandes Wien</u></h2>
-                    <br>
-                    <h4>Wir laden alle Wienerinnen und Wiener herzlich ein:</h4>
-                    <p>Unterstützen Sie die Initiative „Für ein ur leiwandes Wien“! Damit sich Wien entfalten kann. Damit unsere Stadt so wird, dass sich alle wohlfühlen.</p>
-                </div>
-                <div class="right">
-                    <img src="images/punk-s.png" width="420px" alt="punk-s">
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="block">
-        <div class="content">
-            <div class="side-by-side">
-                <div class="left">
-                    <div class="side-by-side">
-                        <div class="left">
-                            <img src="images/circle-arrows-salmon.svg" width="90px" alt="circle-arrows-salmon"></img>
-                        </div>
-                        <div class="right">
-                            <h3 style="color: var(--salmon);">Für ein leistbares Wien!</h3>
-                            <b>Gegen Überteuerung.</b>
-                            <p>Wir wollen eine leistbare Innenstadt.</p>
-                            <p>Damit alle mehr davon haben.</p>
-                            <br>
-                            <button class="l-button">So ist’s ur leiwand!</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="right">
-                    <div class="side-by-side">
-                        <div class="left">
-                            <img src="images/circle-arrows-graygreen.svg" width="90px" alt="circle-arrows-graygreen"></img>
-                        </div>
-                        <div class="right">
-                            <h3 style="color: var(--graygreen);">Für ein faires Wien!</h3>
-                            <b>Für eine gerechte Verteilung.</b>
-                            <p>Wir wollen ein Wien, das fair gegenüber allen ist und dem sich <b>alle</b> wohlfühlen.</p>
-                            <br>
-                            <button class="r-button">So ist’s ur leiwand!</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+</div>
 
 
-    <div class="footer">Student*innen-Projekt (FH Campus Wien 2023)</div>
+<div class="footer">Student*innen-Projekt (FH Campus Wien 2023)</div>
 </div>
 
 </body>
