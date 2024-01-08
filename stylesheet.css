@@ -139,6 +139,11 @@ li {
     border-bottom: 10px solid var(--blue);
 }
 
+.colored-underline-red {
+    text-decoration: none;
+    border-bottom: 10px solid var(--red);
+}
+
 .form-style {
     font-size: large;
     font-weight: bold;
